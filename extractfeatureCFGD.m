@@ -1,6 +1,6 @@
 clc;
 clear;
-filepath = './extrafeature/testdata/';
+filepath = './testdata/';
 dirOutput = dir(fullfile(filepath,'*.ply'));
 plyName = {dirOutput.name}';
 onlyName = strrep(plyName,'.ply','');
@@ -15,7 +15,7 @@ for index = 1:contentNum
     Y=double(Y);
     U=double(U);
     V=double(V);
-    [idx,dist]=knnsearch(P.Location,P.Location,'dist','euclidean','k',7);
+    [idx,dist]=knnsearch(P.Location,P.Location,'dist','euclidean','k',8);
     pnum=length(idx);
     colgra=[];
     for p=1:pnum
